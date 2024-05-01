@@ -11,7 +11,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<br>
 	<div style="color: red">${error}</div>
-	<form:form action="/StudentJpa/updatecourse" method="post" modelAttribute="bean">
+	<form:form action="/StudentJpa/updatecourse" modelAttribute="courseBean" method="post">
 		<table>
 
 			<tr>

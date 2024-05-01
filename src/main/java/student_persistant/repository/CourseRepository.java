@@ -83,10 +83,9 @@ public class CourseRepository {
 		try {
 			em = JPAUtil.getEntityManagerFactory().createEntityManager();
 
-			course = em.createQuery("SELECT c FROM CourseBean c WHERE c.id=:c.id", CourseBean.class)
+			course = em.createQuery("SELECT c FROM CourseBean c WHERE c.id = :id", CourseBean.class)
 					.setParameter("id", id).getSingleResult();
 		} catch (Exception e) {
-			em.getTransaction().rollback();
 			System.out.println(e.getMessage());
 
 		} finally {

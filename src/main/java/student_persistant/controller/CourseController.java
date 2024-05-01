@@ -54,8 +54,8 @@ public class CourseController {
 
 	@RequestMapping(value = "/setupupdate/{id}", method = RequestMethod.GET)
 	public ModelAndView setUpUpdate(@PathVariable int id) {
-
-		return new ModelAndView("update", "bean", service.selectOne(id));
+		CourseBean bean = service.selectOne(id);
+		return new ModelAndView("update", "courseBean", bean);
 	}
 
 	@RequestMapping(value = "/updatecourse", method = RequestMethod.POST)
