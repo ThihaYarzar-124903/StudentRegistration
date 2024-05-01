@@ -13,7 +13,6 @@ public class CourseBean {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	private String course_code;
 	private String name;
 	private double price;
 	
@@ -25,14 +24,6 @@ public class CourseBean {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getCourse_code() {
-		return course_code;
-	}
-
-	public void setCourse_code(String course_code) {
-		this.course_code = course_code;
 	}
 
 	public String getName() {
