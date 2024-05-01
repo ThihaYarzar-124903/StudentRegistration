@@ -1,11 +1,16 @@
 package student_persistant.repository;
 
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
 import jakarta.persistence.EntityManager;
 import student_persistant.model.CourseBean;
 import student_persistant.service.JPAUtil;
 
+@Repository
 public class CourseRepository {
+	
 	public int insertData(CourseBean course) {
 		int i = 0;
 		EntityManager em = null;
@@ -79,7 +84,7 @@ public class CourseRepository {
 			em = JPAUtil.getEntityManagerFactory().createEntityManager();
 
 			course = em.createQuery("SELECT c FROM CourseBean c WHERE c.id=:c.id", CourseBean.class)
-					.setParameter("bookCode", id).getSingleResult();
+					.setParameter("id", id).getSingleResult();
 		} catch (Exception e) {
 			em.getTransaction().rollback();
 			System.out.println(e.getMessage());

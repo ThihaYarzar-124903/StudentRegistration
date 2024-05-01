@@ -1,5 +1,7 @@
 package student_persistant.model;
 
+import javax.validation.constraints.NotEmpty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +15,11 @@ public class CourseBean {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@NotEmpty(message = "Enter course name")
 	private String name;
-	private double price;
+	@NotEmpty(message = "Enter course Price")
+	private String price;
 	
 	public CourseBean() {}
 
@@ -34,11 +39,11 @@ public class CourseBean {
 		this.name = name;
 	}
 
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	

@@ -21,7 +21,7 @@
 			</tr>
 
 			<tr>
-				<td>Book Author</td>
+				<td>Price</td>
 				<td><form:input type="text" path="price"/></td>
 				<td><form:errors path="price" style="color:red;"></form:errors></td>
 			</tr>

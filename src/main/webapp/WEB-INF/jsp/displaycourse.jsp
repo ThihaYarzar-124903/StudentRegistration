@@ -21,19 +21,17 @@ border-collapse:collapse;
 <br>
 <table>
 <tr>
-<th>Course id</th>
 <th>Name</th>
 <th>Price</th>
 <th>Action</th>
 </tr>
 <c:forEach items="${list }" var="data">
 <tr>
-<td>${data.id }</td>
 <td>${data.name }</td>
 <td>${data.price }</td>
 <td>
-<a href="/BookManagement_SpringJPA/setupupdate/${data.id }">Update</a>|
-<a href="/BookManagement_SpringJPA/deletebook/${data.id}">Delete</a>
+<a href="/StudentJpa/setupupdate/${data.id }">Update</a>|
+<a href="/StudentJpa/deletecourse/${data.id}">Delete</a>
 </td>
 </tr>
 </c:forEach>

@@ -34,14 +34,14 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "/setupaddcourse", method = RequestMethod.GET)
-	public ModelAndView setUpAddBook() {
-		return new ModelAndView("add_book", "bean", new CourseBean());
+	public ModelAndView setUpAddCourse() {
+		return new ModelAndView("add_course", "bean", new CourseBean());
 	}
 
 	@RequestMapping(value = "/addcourse", method = RequestMethod.POST)
 	public String addBook(@ModelAttribute("bean") @Validated CourseBean bean, BindingResult bs, ModelMap model) {
 		if (bs.hasErrors()) {
-			return "add_book";
+			return "add_course";
 		} else {
 			int i = service.insertData(bean);
 			if (i == 0) {
